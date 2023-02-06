@@ -20,8 +20,13 @@ Route::get('/', function () {
 
 Route::post('contact', [ContactController::class,'contact'])->name('contact');
 
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+// Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });
