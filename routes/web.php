@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,9 @@ Route::post('contact', [ContactController::class,'contact'])->name('contact');
 //     })->name('dashboard');
 // });
 
+
+Route::resource('blog', BlogController::class);
+Route::get('blog-detailed', BlogController::class,'blogdetailed');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
