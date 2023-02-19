@@ -29,7 +29,8 @@ Route::post('contact', [ContactController::class,'contact'])->name('contact');
 
 
 Route::resource('blog', BlogController::class);
-Route::get('blog-detailed', BlogController::class,'blogdetailed');
+// Route::get('blog-detailed/{blogPost}', [BlogController::class,'blogdetailed'])->name('blog-detailed');
+Route::get('blog-detailed/{blogPost}', [BlogController::class,'blogdetailed']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

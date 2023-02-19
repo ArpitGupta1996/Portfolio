@@ -88,7 +88,13 @@ class BlogController extends Controller
     }
 
 
-    public function blogdetailed(){
-        return "here";
+    public function blogdetailed($blogPost){
+
+        // return $blogPost;
+        $blog = Post::where('slug', $blogPost)->get();
+
+        // return $blog;
+        
+        return view('blog-detailed', compact('blog'));
     }
 }

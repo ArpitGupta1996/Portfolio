@@ -11,7 +11,8 @@
     <div class="card-group">
         <div class="card">
             @foreach ($blog as $item)
-                <a href="">
+                {{-- <a href="{{ route(blog-detailed/{{ $item->id }}) }}"> --}}
+                  <a href="./blog-detailed/{{ $item->slug }}">
                     <img class="card-img-top" src="{{ URL::asset('storage/' .$item->image) }}" alt="Card image cap" style="width:288px;">
           <div class="card-body">
             <h5 class="card-title">{{ $item->title }}</h5>
