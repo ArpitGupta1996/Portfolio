@@ -3,7 +3,7 @@
 @foreach($blog as $blogdetails)
 <h1>{{ $blogdetails->title }} </h1>
 
-<p>
+<p style="text-align: justify; font-family: 'Times New Roman', Times">
     {{ strip_tags($blogdetails->body) }}
 </p>
 

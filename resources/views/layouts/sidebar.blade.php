@@ -17,6 +17,7 @@
             <li><a href="#section2">What I’m good at</a></li>
             <li><a href="#section3">My Work</a></li>
             <li><a href="#section4">Contact Me</a></li>
+            <li><a href="{{ route('blog.index') }}">Blog</a></li>
           </ul>
         </nav>
         <div class="social-network">
