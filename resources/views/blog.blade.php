@@ -16,7 +16,8 @@
                     <img class="card-img-top" src="{{ URL::asset('storage/' .$item->image) }}" alt="Card image cap" style="width:288px;">
           <div class="card-body">
             <h5 class="card-title">{{ $item->title }}</h5>
-            <p class="card-text">{{ strip_tags($item->body) }}</p><br>
+            {{-- <p class="card-text">{{!!   strip_tags($item->body) !!}}</p><br> --}}
+            <p class="card-text">{!!  substr(strip_tags($item->body),0,50 )!!}</p><br>
           </div>
           <div class="card-footer">
             <small class="text-muted">{{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</small>
