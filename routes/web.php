@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
@@ -34,4 +35,13 @@ Route::get('blog-detailed/{blogPost}', [BlogController::class,'blogdetailed']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+}); 
+
+
+Route::get('curl', [UserController::class, 'curl']);
+
+
+#fallback route must be thelast route to be registredin theapplication
+Route::fallback(function(){
+    return view('error');
 });

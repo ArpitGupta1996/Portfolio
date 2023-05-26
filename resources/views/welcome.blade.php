@@ -4,7 +4,7 @@
     <div id="page-wraper">
       <!-- Sidebar Menu -->
       @include('layouts.sidebar')
-
+      
       <section class="section about-me" data-section="section1">
         <div class="container">
           <div class="section-heading">
